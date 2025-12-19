@@ -1,0 +1,6 @@
+ID,PurchaseOrderByCustomer,Status,Comment,CreatedAt
+101,XYZ,NEW,Waiting for approval,2025-12-19T10:00:00
+102,4500045060,APPROVED,Approved by manager,2025-12-19T09:30:00
+103,4500044999,REJECTED,Price too high,2025-12-18T17:45:00
+104,4500045122,NEW,Pending review,2025-12-19T11:00:00
+105,10091701,APPROVED,Approved successfully,2025-12-18T16:20:00

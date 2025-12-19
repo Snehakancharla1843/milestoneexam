@@ -1,0 +1,73 @@
+@server=http://localhost:42821
+@username=alice
+@password=
+
+
+### A_SalesOrder
+# @name A_SalesOrder_GET
+GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder
+Authorization: Basic {{username}}:{{password}}
+
+
+### GET latest (see the new one)
+GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder?$orderby=SalesOrder desc&$top=5
+Authorization: Basic {{username}}:{{password}}
+
+###
+GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder?$orderby=SalesOrder desc&$top=1
+Authorization: Basic {{username}}:{{password}}
+
+###
+GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder?$filter=PurchaseOrderByCustomer eq 'XYZ'
+Authorization: Basic {{username}}:{{password}}
+
+
+### CREATE Sales Order (Deep Insert)
+POST {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "SalesOrderType": "OR",
+  "SalesOrganization": "1710",
+  "DistributionChannel": "10",
+  "OrganizationDivision": "00",
+  "SoldToParty": "17100003",
+  "PurchaseOrderByCustomer": "XYZ",
+
+  "to_Item": {
+    "results": [
+      {
+        "Material": "TG11",
+        "RequestedQuantity": "1",
+        "RequestedQuantityUnit": "PC"
+      }
+    ]
+  }
+}
+
+
+
+### A_SalesOrder
+# @name A_SalesOrder_PATCH
+PATCH {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder/er-8242703
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "SalesOrder": "er-8242703",
+  "SalesOrderType": "2703",
+  "SalesOrganization": "2703",
+  "SoldToParty": "ty-8242703",
+  "SalesOrderDate": "2020-05-20",
+  "TotalNetAmount": 10985382.12,
+  "TransactionCurrency": "42703",
+  "OverallSDProcessStatus": "3"
+}
+
+
+### A_SalesOrder
+# @name A_SalesOrder_DELETE
+DELETE {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder/er-8242703
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
