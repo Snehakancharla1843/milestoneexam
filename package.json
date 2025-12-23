@@ -3,23 +3,40 @@
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "dependencies": {
-    "@sap/cds": "^9",
-    "express": "^4",
     "@sap-cloud-sdk/connectivity": "^4",
     "@sap-cloud-sdk/http-client": "^4",
-    "@sap-cloud-sdk/resilience": "^4"
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4",
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9.6.0",
     "cds-plugin-ui5": "^0.13.0"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-project2": "cds watch --open project2/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "cds": {
     "requires": {
+
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "SO_Employee": {
+            "password": "iare",
+            "roles": ["Employee"]
+          },
+          "SO_Manager": {
+            "password": "iare",
+            "roles": ["Manager"]
+          }
+        }
+      },
       "ZAPI_SALES_ORDER_SRV": {
         "kind": "odata-v2",
         "model": "srv/external/ZAPI_SALES_ORDER_SRV",
@@ -30,6 +47,7 @@
         "csrf": true,
         "csrfInBatch": true
       }
+     
     }
   },
   "workspaces": [
@@ -38,6 +56,9 @@
   "sapux": [
     "app/project1",
     "app/project1",
-    "app/project1"
+    "app/project1",
+    "app/project1",
+    "app/project1",
+    "app/project2"
   ]
 }

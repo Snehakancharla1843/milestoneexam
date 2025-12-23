@@ -1,0 +1,5 @@
+ID,salesOrderID,salesOrg,soldToParty,netValue,currency,approvalStatus,approverComment,createdAt,createdBy,modifiedAt,modifiedBy
+1,8000000495,1710,17100003,1000.00,USD,Pending,Initial submission,2023-10-01T12:00:00Z,alice,2023-10-01T12:00:00Z,alice
+2,2,1710,17100004,2000.00,USD,Approved,Approved by manager,2023-10-02T12:00:00Z,bob,2023-10-02T12:00:00Z,bob3
+3,23,1710,17100005,1500.00,USD,Rejected,Rejected due to errors,2023-10-03T12:00:00Z,alice,2023-10-03T12:00:00Z,alice
+4,24,1710,17100006,2500.00,USD,Pending,Awaiting approval,2023-10-04T12:00:00Z,charlie,2023-10-04T12:00:00Z,charlie

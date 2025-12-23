@@ -1,4 +1,4 @@
-@server=http://localhost:42821
+@server=http://localhost:4004
 @username=alice
 @password=
 
@@ -18,7 +18,7 @@ GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder?$orderby=SalesOr
 Authorization: Basic {{username}}:{{password}}
 
 ###
-GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder?$filter=PurchaseOrderByCustomer eq 'XYZ'
+GET {{server}}/odata/v4/zapi-sales-order-srvsample/A_SalesOrder?$filter=PurchaseOrderByCustomer eq 'XYZA'
 Authorization: Basic {{username}}:{{password}}
 
 
@@ -33,7 +33,7 @@ Authorization: Basic {{username}}:{{password}}
   "DistributionChannel": "10",
   "OrganizationDivision": "00",
   "SoldToParty": "17100003",
-  "PurchaseOrderByCustomer": "XYZ",
+  "PurchaseOrderByCustomer": "XYZA",
 
   "to_Item": {
     "results": [

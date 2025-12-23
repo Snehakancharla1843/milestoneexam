@@ -1,0 +1,44 @@
+{   "xsappname": "capm1_demo",
+    "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.SO_ManagerRole",
+      "description": "SO_ManagerRole"
+    },
+    {
+      "name": "$XSAPPNAME.SO_Employee",
+      "description": "SO_Employee"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "SO_ManagerRole",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.SO_ManagerRole"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "SO_Employee",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.SO_Employee"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "authorities": [
+        "$ACCEPT_GRANTED_AUTHORITIES"
+    ],
+    "oauth2-configuration": {
+        "token-validity": 900,
+        "refresh-token-validity": 1800,
+        "redirect-uris": [
+            "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+        ],
+        "autoapprove": "false"
+    },
+    "xsenableasyncservice": true
+}
